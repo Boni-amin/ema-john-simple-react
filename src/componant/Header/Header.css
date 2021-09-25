@@ -1,0 +1,27 @@
+.header{
+    text-align: center;
+}
+.header-logo{
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.header-img{
+    width: 100%;
+}
+.nav-item{
+    background-color: black;
+    line-height: 50px;
+}
+.nav-item a{
+    text-decoration: none;
+    padding: 5px;
+    color: #fff;
+    font-size: 20px;
+    margin-right: 15px;
+}
+.nav-item a:hover{
+    background-color: lightgray;
+}
+
+

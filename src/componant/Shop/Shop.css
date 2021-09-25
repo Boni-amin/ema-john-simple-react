@@ -1,0 +1,22 @@
+.search-container{
+    background-color: rgba(0, 0, 0, 0.747);
+    padding: 10px 0;
+    text-align: center;
+}
+.search-container input{
+    width: 75%;
+    padding: 5px;
+
+}
+
+.shop-contianer{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.product-container{
+    margin-left: 70px;
+    border-right: 1px solid lightgray;
+}
+.card-container{
+    padding-left: 10px;
+}

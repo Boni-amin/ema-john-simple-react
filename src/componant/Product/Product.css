@@ -1,0 +1,22 @@
+.product{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    margin-right: 8px;
+    padding: 10px 0;
+
+}
+.product-img{
+    margin-right: 10px;
+}
+.product-name{
+    color: blue;
+    font-weight: 400;
+}
+.add-card{
+    background-color: rgb(236, 188, 64);
+    padding: 7px 80px;
+    border: none;
+    border: 1px solid black;
+
+    border-radius: 3px;
+}
