@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.css'
 
 const Card = (props) => {
-    // console.log(props)
+    console.log(props)
     const { card } = props;
     let quantityTotal = 0;
     let total = 0;
@@ -10,10 +10,10 @@ const Card = (props) => {
         if(!product.quantity){
             product.quantity = 1;
         }
-        total = total + product.price * product.quantity;
         quantityTotal = quantityTotal + product.quantity;
+        total = (total + product.price) * product.quantity;
     }
-    const shipping = total > 0? 15 : 0 ;
+    const shipping = total > 0 ? 15 : 0 ;
     const tax = (total + shipping) * 0.10;
     const orderTotal = total + shipping + tax;
 
@@ -25,6 +25,7 @@ const Card = (props) => {
             <p>Shipping & Handling: ${shipping}</p>
             <p>Tax: ${tax.toFixed(2)}</p>
             <h5>Order Toatal: ${orderTotal.toFixed(2)}</h5>
+            {props.children}
         </div>
     );
 };

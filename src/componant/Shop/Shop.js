@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Card from '../Card/Card';
 import Product from '../Product/Product';
@@ -40,8 +41,18 @@ const Shop = () => {
     } ,[products])
 
     const handleAddToCard = (product) =>{
-        // console.log(product)
-        const newCard= [...card, product]
+       const exists = card.find(pd => pd.key === product.key)
+        let newCard = []
+       if(exists){
+            const remainng = card.filter(pd => pd.key !== product.key)
+            exists.quantity = exists.quantity + 1 ;
+            newCard = [...remainng, exists]
+       }
+       else{
+            product.quantity = 1;
+            newCard = [...card, product]
+
+       }
         setCard(newCard)
         addToDb(product.key)
     }
@@ -74,7 +85,11 @@ const Shop = () => {
                 }
             </div>
             <div className="card-container">
-                <Card card={card}></Card>
+                <Card card={card}>
+                    <Link to="/review">
+                        <button className ="add-card">Buy Now</button>
+                    </Link>
+                </Card>
             </div>
         </div>
         </>
